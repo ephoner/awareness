@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+        <style>
+        .login-form {
+            width: 350px;
+            height: auto;
+            top: 50%;
+            margin-top: -180px;
+        }
+    </style>
+
+    <body class="h-vh-100 hero-bg">
+
+    <form class="login-form bg-white p-6 mx-auto border bd-default win-shadow"
+          data-role="validator"
+          action="javascript:"
+          data-clear-invalid="2000"
+          data-on-error-form="invalidForm"
+          data-on-validate-form="validateForm" >
+        <span class="mif-vpn-lock mif-4x place-right" style="margin-top: -10px;"></span>
+        <h2 class="text-center">登陆帐号</h2>
+        <hr class="thin mt-4 mb-4 bg-white">
+        <div class="form-group">
+            <input type="text" data-role="input" data-prepend="<span class='mif-envelop'>" placeholder="Enter your email..." data-validate="required email">
+        </div>
+        <div class="form-group">
+            <input type="password" data-role="input" data-prepend="<span class='mif-key'>" placeholder="Enter your password..." data-validate="required minlength=6">
+        </div>
+        <div class="form-group mt-10">
+            <input type="checkbox" data-role="checkbox" data-caption="记住帐号" class="place-right">
+            <button class="button">登陆</button>
+        </div>
+    </form>
+
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../metro/js/metro.js"></script>
+    <script>
+        function invalidForm(){
+            var form  = $(this);
+            form.addClass("ani-ring");
+            setTimeout(function(){
+                form.removeClass("ani-ring");
+            }, 1000);
+        }
+
+        function validateForm(){
+            $(".login-form").animate({
+                opacity: 0
+            });
+            self.location.href="{% url 'login' %}"
+        }
+    </script>
+
+</body>
+{% endblock %}

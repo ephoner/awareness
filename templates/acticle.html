@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row flex-xl-nowrap">
+            {% include 'nav_list.html' %}
+
+            <div class="navview-content pl-4-md pr-4-md cell-8">
+           <div class="row">
+
+                <div class="cell-md-12">
+                    <div class="panel rounded no-overflow shadow-3">
+                        <div class="info-panel-header bg-green fg-white  text-center">{{ article.title }}</div>
+                        <div class="info-panel-content">
+                            <p>{{ article.content|safe }}</p>
+                        </div>
+                        <div class="panel-footer">
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="cell-2">cell-3</div>
+
+        </div>
+    </div>
+
+
+{% endblock %}
