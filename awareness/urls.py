@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from article.views import home, awareness, about, donate,\
-    article, concepts, yomedi, zen, qigong, mnemonics, books, media
-from accounts.views import login_view, logout_view, register_view
+    article, concepts, yomedi, zen, qigong, mnemonics, books, media, search
+from accounts.views import login_view, register_view
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -29,6 +29,8 @@ urlpatterns = [
     path('mnemonics', mnemonics, name='mnemonics'),
     path('books', books, name='books'),
     path('media', media, name='media'),
+
+    path('search', search, name='search'),
 
 
 

@@ -1,17 +1,18 @@
+{% load staticfiles %}
 
-    <div class="container-fluid bg-darkMagenta fg-white pos-fixed fixed-top z-top">
-        <header class="app-bar container bg-darkMagenta fg-white pos-relative app-bar-expand-md" data-role="appbar" id="app-bar-1530719958856692"><button type="button" class="hamburger menu-down"><span class="line"></span><span class="line"></span><span class="line"></span></button>
-            <a href="/" class="d-block d-none-md brand fg-white no-hover"><span class="border bd-white border-radius p-2">
+    <div class="container-nav  pos-fixed fixed-top z-top">
+        <header class="app-bar container  pos-relative app-bar-expand-md" data-role="appbar" id="app-bar-1530719958856692"><button type="button" class="hamburger menu-down"><span class="line"></span><span class="line"></span><span class="line"></span></button>
+            <a href="/" class="d-block d-none-md brand   navbar-a no-hover"><span class="border navbar-a border-radius p-2">
                 逻辑心理学
             </span></a>
-            <a href="/" class="d-none d-block-md brand fg-white no-hover">逻辑心理学</a>
+            <a href="/" class="d-none d-block-md brand navbar-a no-hover">逻辑心理学</a>
             <ul class="app-bar-menu ml-auto collapsed" style="display: none;">
-                <li><a href="{% url 'awareness' %}">自我认知</a></li>
-                <li><a href="{% url 'yomedi' %}">意识改造</a></li>
-                <li><a href="{% url 'donate' %}">捐赠我们</a></li>
-                <li><a href="{% url 'about' %}">关于我们</a></li>
-                <li><a href="{% url 'login' %}">登陆</a></li>
-                <li><a href="{% url 'register' %}">注册</a></li>
+                <li><a class="navbar-a" href="{% url 'awareness' %}">自我认知</a></li>
+                <li><a class="navbar-a" href="{% url 'yomedi' %}">意识改造</a></li>
+                <li><a class="navbar-a" href="{% url 'donate' %}">捐赠我们</a></li>
+                <li><a class="navbar-a" href="{% url 'about' %}">关于我们</a></li>
+                <li><a class="navbar-a" href="{% url 'login' %}">登陆</a></li>
+                <li><a class="navbar-a" href="{% url 'register' %}">注册</a></li>
             </ul>
         </header>
-    </div>
+   </div>

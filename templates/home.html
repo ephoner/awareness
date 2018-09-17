@@ -1,17 +1,32 @@
+
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-<body style="padding-top: 50px"><div class="notify-container"></div>
-    {% include 'nav.html' %}
-    <div class="hero hero-bg text-center" style="margin-top: -20px">
+<div class="notify-container"></div>
+
+    <div class="hero text-center" style="margin-top: -20px;background: url('{% static 'images/mind.jpg' %}');background-size: cover">
 
 	<canvas width="600" height="500" id="myCanvas" ></canvas>
 
 	<div id="tags" >
+        {% for item  in symptom_tags %}
+        <a  style="color: #0a0a0a">item</a>
+        {% endfor %}
+
 		<a >注意力难集中</a>
-		<a href="#">抑郁</a><a href="#">缺乏自律</a><a href="#">无精打采</a><a href="#">冲动</a>
-		<a href="#">情绪失控</a><a href="#">失眠</a><a href="#">焦虑</a><a href="#">缺乏兴趣</a>
-        <a href="#">无聊</a><a href="#">拖延症</a><a href="#">情绪敏感</a><a href="#">不开心</a>
+		<a href="#">抑郁</a>
+        <a href="#">缺乏自律</a>
+        <a href="#">无精打采</a>
+        <a href="#">冲动</a>
+		<a href="#">情绪失控</a>
+        <a href="#">失眠</a>
+        <a href="#">焦虑</a>
+        <a href="#">缺乏兴趣</a>
+        <a href="#">无聊</a>
+        <a href="#">拖延症</a>
+        <a href="#">情绪敏感</a>
+        <a href="#">不开心</a>
 	</div>
 
 
@@ -130,11 +145,13 @@
 
 </div>
 
-</body>
+
 
 
   <script type="text/javascript">
+
   window.onload = function () {
+
 	try {
 		var i, et = document.getElementById('tags').childNodes;
 		for (i in et) {
@@ -160,3 +177,4 @@
     </script>
 
 {% endblock %}
+

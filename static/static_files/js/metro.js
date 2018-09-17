@@ -8228,7 +8228,8 @@ var DatePicker = {
                     scrollTop: scroll_to
                 }, 100, function(){
                     target_element.addClass("active");
-                    Utils.exec(o.onScroll, [target_element, list, picker], list[0]);
+                    Utils.exec(o.onScroll, [target_element, list, picker], list[0]
+                    );
                 });
             });
         });
@@ -19769,3 +19770,17 @@ Metro.plugin('wizard', Wizard);
 return METRO_INIT === true ? Metro.init() : Metro;
 
 }));
+
+//
+// $(document).ready(function() {
+//       $(window).on('scroll', function() {
+//         if (Math.round($(window).scrollTop()) > 100) {
+//           $('.navbar').addClass('scrolled');
+//           $('.navbar-a').addClass('fg-black');
+//
+//         } else {
+//           $('.navbar').removeClass('scrolled');
+//           $('.navbar-a').removeClass('fg-black');
+//         }
+//       });
+//     });

@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="软件下载" content="">
     <meta name="纯净软件" content="">
  <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
  <link rel="icon" href="{% static  "images/icons/favicon.ico" %}">
@@ -22,12 +21,16 @@
 {#    <link href="{% static "css/navbar-static-top.css"  %}" rel="stylesheet">#}
     <link href="{% static "css/cunstom.css"  %}" rel="stylesheet">
 
+
 {#      <link href="{% static "css/dashboard.css"  %}" rel="stylesheet">#}
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 
     <script src="{% static "js/jquery-3.3.1.min.js"%}"> </script>
+
      <script src="{% static "js/tagcanvas.min.js"  %}"></script>
-    <script src="https://cdn.metroui.org.ua/v4/js/metro.min.js"></script>
+    <script src="{% static "js/metro.min.js" %}"></script>
+
+
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -47,23 +50,16 @@
 
 
 
-
-
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
     <script src= "{% static "js/bootstrap.min.js" %}"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src= "{% static "js/ie10-viewport-bug-workaround.js" %}"></script>
+{#    <script src= "{% static "js/ie10-viewport-bug-workaround.js" %}"></script>#}
 
-  <script>
-      $(document).ready(function () {
-           {% block script %}
 
-            {% endblock %}
-      })
-</script>
+
+
   </body>
 </html>

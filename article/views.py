@@ -1,12 +1,25 @@
 from django.shortcuts import render, Http404
-from .models import Article, Category
+from django.db.models import Q
+from .models import Article, Category, Symptom
+
 # Create your views here.
 
 
 
 def home(request):
+    symptom_tags = Symptom.objects.all()
 
-    return render(request, 'home.html', locals() )
+    return render(request, 'home.html', locals())
+
+
+def search(request):
+
+    query = request.GET.get("q")
+
+    articles = Article.objects.filter(Q(title__contains=query))
+
+    return render(request, 'search.html', locals())
+
 
 
 def awareness(request):

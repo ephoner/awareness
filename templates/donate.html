@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block content %}
 
+{% block content %}
     <div class="container-fluid">
         <div class="row flex-xl-nowrap">
             {% include 'nav_list.html' %}
@@ -41,5 +41,12 @@
         </div>
     </div>
 
+    <script>
+      $(document).ready(function () {
+            $('.container-nav').addClass('scrolled');
+             $('.navbar-a').addClass('fg-black');
+      })
+</script>
 
 {% endblock %}
+

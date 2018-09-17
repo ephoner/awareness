@@ -1,9 +1,16 @@
-<div class="cell-md-2 cell-xl-2 pr-0 border-right bd-light" id="sidenav">
-    <form class="d-flex flex-align-center flex-justify-between flex-nowrap p-1 pr-2">
+{% load staticfiles %}
+<style>
+    body{
+        background: url("{% static 'images/body-bg.jpg' %}");
+    }
+</style>
+
+<div class="cell-md-2 cell-xl-2 pr-0 border-right" id="sidenav" style="background: rgba(255,255,255,0)">
+    <form class="d-flex flex-align-center flex-justify-between flex-nowrap p-1 pr-2" action="{% url 'search' %}" method="get">
         <div class="input mb-0"><span class="algolia-autocomplete"
                                       style="position: relative; display: inline-block; direction: ltr;">
             <input type="text" placeholder="搜索..." data-role="search" data-clear-button="false" class="ds-input"
-                   id="search_input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list"
+                   id="search_input" autocomplete="off"  name="q" spellcheck="false" role="combobox" aria-autocomplete="list"
                    aria-expanded="false"
                    aria-owns="algolia-autocomplete-listbox-0" dir="auto"
                    style="position: relative; vertical-align: top;"><pre aria-hidden="true"
@@ -21,42 +28,42 @@
     </form>
 
     <hr>
-
-    <ul class="v-menu">
+    <ul class="v-menu" style="overflow: hidden;background:rgba(255,255,255,0)">
+{#    <ul class=" d-menu open pos-static fg-black">#}
         <li class="menu-title">认识自我</li>
         {% if cate.slug == "awareness" %}
-            <li><a class="bg-gray" href="{% url 'awareness' %}"><span class="mif-home icon fg-crimson"></span> 意识基础</a>
+            <li><a class="bg-white" href="{% url 'awareness' %}"><span class="mif-home icon fg-crimson"></span> 意识基础</a>
             </li>
         {% else %}
             <li><a href="{% url 'awareness' %}"><span class="mif-home icon fg-crimson"></span> 意识基础</a></li>
         {% endif %}
         {% if cate.slug == "concepts" %}
-            <li><a class="bg-gray" href="{% url 'concepts' %}"><span class="mif-school icon fg-emerald"></span> 基本概念</a>
+            <li><a class="bg-white" href="{% url 'concepts' %}"><span class="mif-school icon fg-emerald"></span> 基本概念</a>
             </li>
         {% else %}
             <li><a href="{% url 'concepts' %}"><span class="mif-school icon fg-emerald"></span> 基本概念</a></li>
         {% endif %}
         <li class="menu-title">改造意识</li>
         {% if cate.slug == "yomedi" %}
-            <li><a class="bg-gray" href="{% url 'yomedi' %}"><span class="mif-medium icon fg-amber"></span> 瑜伽冥想</a>
+            <li><a class="bg-white" href="{% url 'yomedi' %}"><span class="mif-medium icon fg-amber"></span> 瑜伽冥想</a>
             </li>
         {% else %}
             <li><a href="{% url 'yomedi' %}"><span class="mif-medium icon fg-amber"></span> 瑜伽冥想</a></li>
         {% endif %}
         {% if cate.slug == "zen" %}
-            <li><a class="bg-gray" href="{% url 'zen' %}"><span class="mif-hour-glass icon fg-green"></span> 静坐禅修</a>
+            <li><a class="bg-white" href="{% url 'zen' %}"><span class="mif-hour-glass icon fg-green"></span> 静坐禅修</a>
             </li>
         {% else %}
             <li><a href="{% url 'zen' %}"><span class="mif-hour-glass icon fg-green"></span> 静坐禅修</a></li>
         {% endif %}
         {% if cate.slug == "qigong" %}
-            <li><a class="bg-gray" href="{% url 'qigong' %}"><span class="mif-cloud icon fg-violet"></span> 道家气功</a>
+            <li><a class="bg-white" href="{% url 'qigong' %}"><span class="mif-cloud icon fg-violet"></span> 道家气功</a>
             </li>
         {% else %}
             <li><a href="{% url 'qigong' %}"><span class="mif-cloud icon fg-violet"></span> 道家气功</a></li>
         {% endif %}
         {% if cate.slug == "mnemonics" %}
-            <li><a class="bg-gray" href="{% url 'mnemonics' %}"><span class="mif-paper-plane icon fg-red"></span>
+            <li><a class="bg-white" href="{% url 'mnemonics' %}"><span class="mif-paper-plane icon fg-red"></span>
                 记忆法</a></li>
         {% else %}
             <li><a href="{% url 'mnemonics' %}"><span class="mif-paper-plane icon fg-red"></span> 记忆法</a></li>
@@ -65,7 +72,7 @@
 
         <li>
             {% if cate.slug == "books" %}
-                <a class="bg-gray" href="{% url 'books' %}"><span class="mif-books icon fg-blue"></span> 推荐书籍</a>
+                <a class="bg-white" href="{% url 'books' %}"><span class="mif-books icon fg-blue"></span> 推荐书籍</a>
             {% else %}
                 <a href="{% url 'books' %}"><span class="mif-books icon fg-blue"></span> 推荐书籍</a>
             {% endif %}
@@ -74,7 +81,7 @@
 
         <li>
             {% if cate.slug == "media" %}
-                <a class="bg-gray" href="{% url 'media' %}"><span class="mif-play icon fg-blue"></span> 视频音乐</a>
+                <a class="bg-white" href="{% url 'media' %}"><span class="mif-play icon fg-blue"></span> 视频音乐</a>
             {% else %}
                 <a href="{% url 'media' %}"><span class="mif-play icon fg-blue"></span> 视频音乐</a>
             {% endif %}
